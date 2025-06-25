@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Modificar Consulta{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'mi_parcial/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="contacto">
+  <h2>Modificar Consulta</h2>
+
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar cambios</button>
+  </form>
+</section>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Iniciar Sesion | WhiteSpace Studio{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/globalStyles.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="login-container">
+  <div class="login-card">
+    <h2 class="login-title">Iniciar Sesion</h2>
+
+    {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="id_email">Correo electronico</label>
+        <input type="email" name="email" class="form-control" id="id_email" required>
+      </div>
+      <div class="form-group">
+        <label for="id_password">Contraseña</label>
+        <input type="password" name="password" class="form-control" id="id_password" required>
+      </div>
+      <button type="submit" class="btn-login">Ingresar</button>
+    </form>
+
+    <p class="register-link">
+      ¿No tenes cuenta?
+      <a href="{% url 'registro' %}">Registrate aca</a>
+    </p>
+  </div>
+</div>
+{% endblock %}

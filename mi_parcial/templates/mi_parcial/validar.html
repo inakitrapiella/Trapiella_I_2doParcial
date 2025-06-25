@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Validar cuenta{% endblock %}
+
+{% block content %}
+<div class="container mt-5" style="max-width: 500px;">
+    <h2 class="text-center mb-4">Validar cuenta</h2>
+
+    {% if error %}
+        <div class="alert alert-danger text-center">{{ error }}</div>
+    {% endif %}
+    {% if mensaje %}
+        <div class="alert alert-success text-center">{{ mensaje }}</div>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="codigo" class="form-label">Codigo de validacion:</label>
+            <input type="text" id="codigo" name="codigo" class="form-control" required>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-success">Validar</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

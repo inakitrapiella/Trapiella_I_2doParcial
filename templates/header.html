@@ -1,0 +1,21 @@
+{% load static %}
+
+<header class="encabezado">
+  <div class="contenedor-header">
+    <img src="{% static 'images/logo.png' %}" alt="Logo WhiteSpace Studio" class="logo">
+    <h1 class="titulo-header">WhiteSpace Studio</h1>
+  </div>
+  <nav class="navegacion">
+  <a href="{% url 'index' %}">Inicio</a>
+  <a href="{% url 'servicios' %}">Servicios</a>
+  <a href="{% url 'nosotros' %}">Nosotros</a>
+  <a href="{% url 'contacto' %}">Contacto</a>
+
+    {% if user.is_authenticated %}
+  <a href="{% url 'logout' %}">Cerrar sesion</a>
+{% else %}
+  <a href="{% url 'login' %}">Iniciar sesion</a>
+{% endif %}
+
+</nav>
+</header>

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Nosotros - WhiteSpace Studio{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'mi_parcial/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="nosotros" style="padding: 4rem 2rem; text-align: center;">
+  <h1>Sobre Nosotros</h1>
+  <p style="max-width: 800px; margin: 2rem auto;">
+    En WhiteSpace Studio nos dedicamos a crear experiencias visuales unicas que potencian la identidad de las marcas. Nuestro equipo esta conformado por diseñadores apasionados por el detalle, la innovacion y la funcionalidad. Combinamos diseño estrategico y creatividad para lograr resultados impactantes en branding y UX/UI.
+  </p>
+
+  <img src="{% static 'images/nosotros.jpg' %}" alt="Nuestro equipo" style="max-width: 500px; width: 100%; border-radius: 8px; margin-top: 2rem;">
+</section>
+{% endblock %}

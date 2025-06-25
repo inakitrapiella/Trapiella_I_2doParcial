@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Galeria | WhiteSpace Studio{% endblock %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    <h2>Galeria de Inspiracion</h2>
+    <div id="galeria" class="row justify-content-center"></div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'mi_parcial/galeria.js' %}"></script>
+{% endblock %}

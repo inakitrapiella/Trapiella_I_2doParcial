@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}WhiteSpace Studio{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'mi_parcial/style.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'mi_parcial/scripts.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+<section style="text-align: center; padding: 50px 20px; background-color: #f8f9fa;">
+  <h1 style="font-size: 2.5rem; margin-bottom: 20px;">Bienvenido a WhiteSpace Studio</h1>
+  <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; line-height: 1.6;">
+    Este sitio esta pensado para que descubras lo mejor de nuestro estudio: servicios de branding profesional, diseño UX/UI, consultoria creativa y mucho mas.
+    Explora nuestras paginas para conocer el equipo, nuestros trabajos y como podemos ayudarte a destacar tu marca.
+  </p>
+
+  <img src="{% static 'images/servicios.jpg' %}" alt="Imagen de bienvenida" style="width: 100%; max-width: 800px; margin-top: 30px; border-radius: 10px;">
+</section>
+
+{% endblock %}

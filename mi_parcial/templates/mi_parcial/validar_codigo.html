@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Validar Cuenta{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'mi_parcial/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="contacto">
+  <h2 style="margin-bottom: 1rem;">Validar Cuenta</h2>
+
+  {% if mensaje %}
+    <div style="margin-bottom: 1rem; color: {% if correctamente in mensaje %}green{% else %}red{% endif %};">
+      {{ mensaje }}
+    </div>
+  {% endif %}
+
+  <form method="POST" class="formulario">
+    {% csrf_token %}
+    <input type="email" name="email" placeholder="Correo electronico" required>
+    <input type="text" name="codigo" placeholder="Codigo de validacion" required>
+    <button type="submit">Validar</button>
+  </form>
+
+  <p style="margin-top: 1rem;">
+    ¿Ya validaste tu cuenta? <a href="{% url 'login' %}">Inicia sesion</a>
+  </p>
+</section>
+{% endblock %}
+

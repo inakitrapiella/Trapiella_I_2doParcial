@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contacto - WhiteSpace Studio{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'mi_parcial/style.css' %}">
+{% endblock %}
+
+<script src="{% static 'mi_parcial/scripts.js' %}"></script>
+
+
+<div id="id_resultado"></div>
+
+
+{% block content %}
+<section class="contacto">
+    <h2>¿Tenes un proyecto?</h2>
+    <p>Hablemos</p>
+<form id="id_consultas" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Enviar</button>
+</form>
+        {% if mensajeexito %}
+        <div>{{mensajeexito}}</div>
+        {% endif %}
+
+</section>
+{% endblock %}

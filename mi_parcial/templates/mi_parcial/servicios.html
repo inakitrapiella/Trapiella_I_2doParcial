@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Servicios - WhiteSpace Studio{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'mi_parcial/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="servicios">
+  <h1>Servicios que ofrecemos</h1>
+  <div class="grid-servicios">
+    <div class="servicio">
+      <img src="{% static 'images./servicios3.jpg' %}" alt="Branding">
+      <h3>Branding Corporativo</h3>
+      <p>Construimos la identidad visual de tu marca desde cero.</p>
+    </div>
+    <div class="servicio">
+      <img src="{% static 'images/servicios1.jpg' %}" alt="UX/UI">
+      <h3>Diseño UX/UI</h3>
+      <p>Diseñamos experiencias digitales intuitivas y atractivas.</p>
+    </div>
+    <div class="servicio">
+      <img src="{% static 'images/servicios4.jpg' %}" alt="Consultoria">
+      <h3>Consultoria Creativa</h3>
+      <p>Te asesoramos para que tu comunicacion visual sea coherente y poderosa.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

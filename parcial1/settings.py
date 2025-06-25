@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 import os
 from pathlib import Path
 
+import dj_database_url
 from django.conf.global_settings import EMAIL_HOST, LOGIN_REDIRECT_URL, LOGOUT_REDIRECT_URL
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +28,7 @@ SECRET_KEY = 'django-insecure-g_u72f8=^((!x6@nj%3)!q8wkfmed&8&s!y)8dn_b*srbn&=3c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['whitespacestudio-3vki.onrender.com']
 
 
 # Application definition
@@ -78,16 +79,12 @@ WSGI_APPLICATION = 'parcial1.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'parcial',
-        'USER': 'postgres',
-        'PASSWORD': '43760334_',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config (
+        default = 'postgresql://whitespacedb_user:P3ji0o2UW4cZxAnVWBzTgVUJh2wAZPWv@dpg-d1e8ksh5pdvs73bpv8vg-a.oregon-postgres.render.com/whitespacedb',
+        conn_max_age= 600,
+        ssl_require= True
+    )
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators

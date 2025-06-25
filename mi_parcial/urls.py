@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 from .views import listadoconsultas, modificar_consulta, eliminar_consulta
 from django.contrib.auth import views as auth_views
+from . import create_superuser
 
 
 urlpatterns = [
